@@ -1,0 +1,5 @@
+CLASS zbp_i_employee_hub DEFINITION PUBLIC ABSTRACT FINAL FOR BEHAVIOR OF zi_employee_hub.
+ENDCLASS.
+
+CLASS zbp_i_employee_hub IMPLEMENTATION.
+ENDCLASS.

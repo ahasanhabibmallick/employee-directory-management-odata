@@ -1,0 +1,39 @@
+managed implementation in class zbp_i_employee_hub unique;
+strict ( 2 );
+
+define behavior for ZI_EMPLOYEE_HUB alias Employee
+persistent table zemployee_hub
+lock master
+authorization master ( instance )
+//etag master LocalLastChangedAt
+{
+  create;
+  update;
+  delete;
+
+  field ( mandatory : create ) EmployeeID;
+  field ( mandatory ) FirstName, LastName, Email, Department, Designation, JoiningDate, Status;
+  field ( readonly ) CreatedAt, CreatedBy, LastChangedAt, LastChangedBy, LocalLastChangedAt;
+
+  validation validateEmployeeID on save { create; }
+  validation validateStatus on save { create; update; }
+
+  mapping for zemployee_hub
+  {
+    EmployeeID = employee_id;
+    FirstName = first_name;
+    LastName = last_name;
+    Email = email;
+    Phone = phone;
+    Department = department;
+    Designation = designation;
+    JoiningDate = joining_date;
+    Location = location;
+    Status = status;
+    CreatedBy = created_by;
+    CreatedAt = created_at;
+    LastChangedBy = last_changed_by;
+    LastChangedAt = last_changed_at;
+    LocalLastChangedAt = local_last_changed_at;
+  }
+}

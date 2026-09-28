@@ -1,0 +1,4 @@
+@EndUserText.label: 'Service Definition for Employee Hub'
+define service ZSD_EMPLOYEE_HUB {
+  expose ZI_EMPLOYEE_HUB as Employee;
+}
